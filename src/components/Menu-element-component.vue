@@ -49,8 +49,7 @@
 
     .img-wrap {
         width: auto;
-        height: 7vh;
-        min-height: 45px;
+        height: 75px;
         display: inline-block;
     }
 

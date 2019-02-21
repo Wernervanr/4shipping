@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <app-map></app-map>
-    <component :is="activeComponent"></component>
+    <app-rollup :activeComponent="activeComponent"></app-rollup>
     <app-menu v-on:item-activated="changeActiveComponent"></app-menu>
   </div>
 </template>
@@ -9,10 +9,7 @@
 <script>
   import Map from './components/Map-component.vue'
   import Menu from './components/Menu-component.vue'
-  import KaartInfo from './components/Menu-component.vue'
-  import VrachtInfo from './components/Menu-component.vue'
-  import TransportInfo from './components/Menu-component.vue'
-  import MeerInfo from './components/Menu-component.vue'
+  import Rollup from './components/Rollup-component.vue'
 
   export default {
     name: 'app',
@@ -28,10 +25,7 @@
       },
     },
     components: {
-      appKaartInfo: KaartInfo,
-      appVrachtInfo: VrachtInfo,
-      appTransportInfo: TransportInfo,
-      appMeerInfo: MeerInfo,
+      appRollup: Rollup,
       appMap: Map,
       appMenu: Menu
     },

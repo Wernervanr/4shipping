@@ -60,10 +60,8 @@
 
     .menu-bar {
         background: #16153D;
-        height: 10%;
         min-height: 70px;
         width: 100%;
-
     }
 
     .menu-position {
