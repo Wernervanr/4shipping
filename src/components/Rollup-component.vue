@@ -1,6 +1,9 @@
 <template>
     <div class="component-holder" v-bind:style="{ height: setHeight + 'px'}">
-        <button v-on:mousemove="adjustComponentSize" class="component-button"></button>
+        <div v-on:mousedown="adjustComponentSize" v-on:mouseup="stopAdjusting">
+            <button class="component-button"></button>
+        </div>
+        <br>
         <component :is="activeComponent"></component>
     </div>
 </template>
@@ -15,6 +18,7 @@
         data () {
             return {
                 setHeight: 30,
+                adjustingHeight: false
             }
         },
         props: [
@@ -22,8 +26,19 @@
         ],
         methods: {
             adjustComponentSize () {
-                console.log(event);
+                this.adjustingHeight = true;
+                document.onmousemove = (MouseEvent) => {
+                    if (this.adjustingHeight) {
+                        let y = MouseEvent.y;
+                        let x = document.body.scrollHeight;
+                        let newHeight = x - y;
+                        this.setHeight = newHeight -30;
+                    }
+                };
             },
+            stopAdjusting () {
+                this.adjustingHeight = false;
+            }
         },
         components: {
             appKaartInfo: KaartInfo,
@@ -36,20 +51,20 @@
 
 <style>
     .component-holder {
-        z-index: 10;
+        z-index: 5;
         position: absolute;
         bottom: 97px;
         background: white;
         width: 100%;
+        max-height: 700px;
+        min-height: 30px;
     }
 
     .component-button {
-        height: 5px;
+        height: 6px;
         width: 60px;
         background: lightgrey;
         margin-bottom: 10px;
         border: none;
     }
-
-
 </style>

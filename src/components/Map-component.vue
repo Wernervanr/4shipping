@@ -5,7 +5,7 @@
                 :center="coordinates"
                 :zoom="10"
                 map-type-id="terrain"
-                style="width: 100vw; height: 92vh"
+                style="width: 100vw; height: 95vh"
                 class="map-position"
         >
 
