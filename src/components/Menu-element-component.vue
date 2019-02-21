@@ -25,17 +25,15 @@
             makePink () {
                 this.$emit('item-is-clicked', this.menuItem.itemname);
                 this.isClicked = !this.isClicked;
-            }
+            },
         },
         watch: {
             activeItem: function() {
                 if (this.activeItem !== this.menuItem.itemname){
                     this.isClicked = false;
-                } else {
-                    this.isClicked = true;
                 }
-            }
-        }
+            },
+        },
     }
 
 </script>

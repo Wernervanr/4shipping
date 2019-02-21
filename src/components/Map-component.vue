@@ -21,7 +21,7 @@
                 coordinates: {
                     lat: 52.26,
                     lng: 6.7092
-                }
+                },
             }
         },
         components: {
@@ -31,7 +31,7 @@
             changeLocation (event) {
                 this.coordinates.lat = event.lat;
                 this.coordinates.lng = event.lng;
-            }
+            },
         },
     }
 
