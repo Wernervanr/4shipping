@@ -15,29 +15,28 @@
     export default {
         data () {
             return {
-                activeItem: 'kaart',
+                activeItem: 'appKaartInfo',
                 menuItems: {
                     kaart: {
-                        itemname: 'kaart',
+                        itemname: 'appKaartInfo',
                         imagename: 'Kaart.svg',
                         menutext: 'Kaart/route'
                     },
                     vracht: {
-                        itemname: 'vracht',
+                        itemname: 'appVrachtInfo',
                         imagename: 'Vracht.svg',
                         menutext: 'Vracht'
                     },
                     transport: {
-                        itemname: 'transport',
+                        itemname: 'appTransportInfo',
                         imagename: 'Transport.svg',
                         menutext: 'Transport'
                     },
                     meer: {
-                        itemname: 'meer',
+                        itemname: 'appMeerInfo',
                         imagename: 'Meer.svg',
                         menutext: 'Meer'
                     },
-
                 },
             }
         },
@@ -45,10 +44,10 @@
             changeActiveItem (event) {
                 this.activeItem = event;
                 this.$emit('item-activated', this.activeItem);
-            }
+            },
         },
         components: {
-            menuElement: MenuElement
+            menuElement: MenuElement,
         }
     }
 
@@ -58,18 +57,14 @@
     .row {
         margin: 0;
     }
-
     .menu-bar {
         background: #16153D;
-        height: 10%;
         min-height: 70px;
         width: 100%;
-
     }
-
     .menu-position {
         position: absolute;
         bottom: 0;
-        z-index: 2;
+        z-index: 10;
     }
 </style>

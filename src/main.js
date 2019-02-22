@@ -9,9 +9,9 @@ Vue.use(VueGoogleMaps, {
     // OR: libraries: 'places,drawing'
     // OR: libraries: 'places,drawing,visualization'
   },
-})
+});
 
 new Vue({
   el: '#app',
   render: h => h(App)
-})
+});

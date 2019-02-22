@@ -25,39 +25,35 @@
             makePink () {
                 this.$emit('item-is-clicked', this.menuItem.itemname);
                 this.isClicked = !this.isClicked;
-            }
+            },
         },
         watch: {
             activeItem: function() {
                 if (this.activeItem !== this.menuItem.itemname){
                     this.isClicked = false;
-                } else {
-                    this.isClicked = true;
                 }
-            }
-        }
+            },
+        },
     }
 
 </script>
 
 <style>
-    .pink {
-        filter: sepia(100%) contrast(10%) saturate(10000%) hue-rotate(245deg);
-    }
     img {
         width: auto;
         height: 100%;
     }
-
     .img-wrap {
         width: auto;
-        height: 7vh;
-        min-height: 45px;
+        height: 75px;
         display: inline-block;
     }
 
     .description-text {
         color: white;
         font-size: .9em;
+    }
+    .pink {
+        filter: sepia(100%) contrast(10%) saturate(10000%) hue-rotate(245deg);
     }
 </style>
