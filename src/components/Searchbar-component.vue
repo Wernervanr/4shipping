@@ -36,13 +36,11 @@
         padding: 0;
         box-sizing: inherit;
     }
-
     body {
         background-color: #dcdde1;
         color: #2f3640;
         padding: 3rem;
     }
-
     .search-location {
         display: block;
         width: 45vw;
@@ -55,10 +53,9 @@
         text-align: center;
         border-radius: 10px;
     }
-
     .searchbar-position {
         position: absolute;
-        top: 5%;
+        top: 30px;
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 100;

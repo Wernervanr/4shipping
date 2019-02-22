@@ -1,9 +1,9 @@
 <template>
-    <div class="component-holder" v-bind:style="{ height: setHeight + 'px'}">
-        <div v-on:mousedown="adjustComponentSize" v-on:mouseup="stopAdjusting">
-            <button class="component-button"></button>
-        </div>
-        <br>
+    <div class="component-holder" v-bind:style="{ height: setHeight}">
+            <div class="button-holder">
+                <button class="btn-light" v-on:click="increaseComponentSize">&#8679</button>
+                <button class="btn-light" v-on:click="decreaseComponentSize">&#8681</button>
+            </div>
         <component :is="activeComponent"></component>
     </div>
 </template>
@@ -17,27 +17,30 @@
     export default {
         data () {
             return {
-                setHeight: 30,
-                adjustingHeight: false
+                setHeight: '30px',
             }
         },
         props: [
             'activeComponent',
         ],
         methods: {
-            adjustComponentSize () {
-                this.adjustingHeight = true;
-                document.onmousemove = (MouseEvent) => {
-                    if (this.adjustingHeight) {
-                        let y = MouseEvent.y;
-                        let x = document.body.scrollHeight;
-                        let newHeight = x - y;
-                        this.setHeight = newHeight -30;
-                    }
-                };
+            increaseComponentSize () {
+                if(this.setHeight === '30px'){
+                    this.setHeight = '20%';
+                } else if (this.setHeight === '20%') {
+                    this.setHeight = '50%';
+                } else if (this.setHeight === '50%') {
+                    this.setHeight = '80%';
+                }
             },
-            stopAdjusting () {
-                this.adjustingHeight = false;
+            decreaseComponentSize () {
+                if(this.setHeight === '80%'){
+                    this.setHeight = '50%';
+                } else if (this.setHeight === '50%') {
+                    this.setHeight = '20%';
+                } else if (this.setHeight === '20%') {
+                    this.setHeight = '30px';
+                }
             }
         },
         components: {
@@ -50,21 +53,20 @@
 </script>
 
 <style>
+    .btn-light {
+        margin-top: 2px;
+        margin-bottom: 4px;
+        border-radius: 10%;
+    }
     .component-holder {
         z-index: 5;
         position: absolute;
-        bottom: 97px;
+        bottom: 98px;
         background: white;
         width: 100%;
-        max-height: 700px;
-        min-height: 30px;
     }
-
-    .component-button {
-        height: 6px;
-        width: 60px;
-        background: lightgrey;
-        margin-bottom: 10px;
+    .button-holder {
         border: none;
+        font-size: .8em;
     }
 </style>

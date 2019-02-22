@@ -57,13 +57,11 @@
     .row {
         margin: 0;
     }
-
     .menu-bar {
         background: #16153D;
         min-height: 70px;
         width: 100%;
     }
-
     .menu-position {
         position: absolute;
         bottom: 0;

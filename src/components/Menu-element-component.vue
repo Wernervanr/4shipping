@@ -39,14 +39,10 @@
 </script>
 
 <style>
-    .pink {
-        filter: sepia(100%) contrast(10%) saturate(10000%) hue-rotate(245deg);
-    }
     img {
         width: auto;
         height: 100%;
     }
-
     .img-wrap {
         width: auto;
         height: 75px;
@@ -56,5 +52,8 @@
     .description-text {
         color: white;
         font-size: .9em;
+    }
+    .pink {
+        filter: sepia(100%) contrast(10%) saturate(10000%) hue-rotate(245deg);
     }
 </style>
