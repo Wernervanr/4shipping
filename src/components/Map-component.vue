@@ -8,7 +8,8 @@
                     zoomControlOptions: {
                         position: 3
                     },
-                    streetViewControl: false
+                    streetViewControl: false,
+                    mapTypeControl: false,
                 }"
                 map-type-id="terrain"
                 style="width: 100vw; height: 95vh"

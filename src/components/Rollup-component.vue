@@ -1,8 +1,8 @@
 <template>
     <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
         <div class="button-holder">
-            <button class="btn-light" v-on:click="increaseComponentSize">&#8679</button>
-            <button class="btn-light" v-on:click="decreaseComponentSize">&#8681</button>
+            <button class="btn-secondary mr-1" v-on:click="increaseComponentSize">&#8679</button>
+            <button class="btn-secondary" v-on:click="decreaseComponentSize">&#8681</button>
         </div>
         <component :is="activeComponent"></component>
     </div>
@@ -30,11 +30,11 @@
                 } else if (this.setHeight === '23%') {
                     this.setHeight = '50%';
                 } else if (this.setHeight === '50%') {
-                    this.setHeight = '80%';
+                    this.setHeight = '75%';
                 }
             },
             decreaseComponentSize () {
-                if(this.setHeight === '80%'){
+                if(this.setHeight === '75%'){
                     this.setHeight = '50%';
                 } else if (this.setHeight === '50%') {
                     this.setHeight = '23%';
@@ -63,18 +63,27 @@
 </script>
 
 <style>
-    .btn-light {
+    .btn-secondary {
         margin-top: 5px;
         margin-bottom: 4px;
         border-radius: 10%;
+        width: 50px;
+        background: white;
+        border-color: #16153D;
+        color: black;
+    }
+
+    .btn-secondary:hover {
+        background: #16153D;
     }
     .component-holder {
         z-index: 5;
         position: absolute;
-        bottom: 98px;
+        bottom: 78px;
         background: white;
         width: 100%;
         transition-duration: 750ms;
+        border-top: solid 1px #F0F0F0;
     }
     .button-holder {
         border: none;

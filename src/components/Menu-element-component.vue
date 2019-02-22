@@ -37,7 +37,7 @@
 <style>
     .menu-icon {
         width: auto;
-        height: 75px;
+        height: 55px;
         display: inline-block;
     }
 

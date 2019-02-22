@@ -58,7 +58,6 @@
     }
     .menu-bar {
         background: #16153D;
-        min-height: 70px;
         width: 100%;
     }
     .menu-position {

@@ -1,5 +1,5 @@
 <template>
-    <div class="col-2 col-md-2">
+    <div class="col-2 pl-1">
         <div class="d-flex flex-column">
             <img class="icon pt-1 pb-1 ml-auto mr-auto" :src="'/src/assets/' + menuItem.imagename">
         </div>
@@ -17,7 +17,8 @@
 
 <style>
     .menu-text {
-        font-size: .7em;
+        font-size: .6em;
+        font-weight: 500;
     }
     .icon {
         width: auto;
