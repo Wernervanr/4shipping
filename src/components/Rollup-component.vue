@@ -1,5 +1,5 @@
 <template>
-    <div class="component-holder" v-bind:style="{ height: setHeight}">
+    <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
         <div class="button-holder">
             <button class="btn-light" v-on:click="increaseComponentSize">&#8679</button>
             <button class="btn-light" v-on:click="decreaseComponentSize">&#8681</button>
@@ -26,8 +26,8 @@
         methods: {
             increaseComponentSize () {
                 if(this.setHeight === '33px'){
-                    this.setHeight = '20%';
-                } else if (this.setHeight === '20%') {
+                    this.setHeight = '23%';
+                } else if (this.setHeight === '23%') {
                     this.setHeight = '50%';
                 } else if (this.setHeight === '50%') {
                     this.setHeight = '80%';
@@ -37,19 +37,19 @@
                 if(this.setHeight === '80%'){
                     this.setHeight = '50%';
                 } else if (this.setHeight === '50%') {
-                    this.setHeight = '20%';
-                } else if (this.setHeight === '20%') {
+                    this.setHeight = '23%';
+                } else if (this.setHeight === '23%') {
                     this.setHeight = '33px';
                 }
             },
-            setHeightToTwentyPercent () {
-                this.setHeight = '20%';
+            setHeightToTwentyThreePercent () {
+                this.setHeight = '23%';
             },
         },
         watch: {
             activeComponent: function() {
                 if (this.activeComponent !== ''){
-                    this.setHeightToTwentyPercent();
+                    this.setHeightToTwentyThreePercent();
                 }
             },
         },
@@ -79,5 +79,8 @@
     .button-holder {
         border: none;
         font-size: .7em;
+    }
+    .clearfix {
+        overflow: scroll;
     }
 </style>
