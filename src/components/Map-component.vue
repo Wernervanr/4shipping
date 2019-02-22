@@ -8,12 +8,11 @@
                     zoomControlOptions: {
                         position: 3
                     },
+                    streetViewControl: false
                 }"
                 map-type-id="terrain"
                 style="width: 100vw; height: 95vh"
-                class="map-position"
-        >
-
+                class="map-position">
         </GmapMap>
     </div>
 </template>
@@ -39,7 +38,6 @@
             searchBar: Searchbar,
         },
     }
-
 </script>
 
 <style>
@@ -51,5 +49,4 @@
         bottom: 20%;
         left: 0;
     }
-
 </style>

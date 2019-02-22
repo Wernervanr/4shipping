@@ -21,6 +21,7 @@
     methods : {
       changeActiveComponent (event) {
         this.activeComponent = event;
+        console.log(this.activeComponent);
       },
     },
     components: {
