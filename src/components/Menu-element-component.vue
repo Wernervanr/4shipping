@@ -21,7 +21,7 @@
         methods: {
             itemClicked () {
                 this.$emit('item-is-clicked', this.menuItem.itemname);
-                this.isClicked = !this.isClicked;
+                this.isClicked = true;
             },
         },
         watch: {
