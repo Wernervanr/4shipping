@@ -58,4 +58,5 @@ niet op tablets en telefoonschermen. Ik had uit kunnen zoeken hoe dit met een 't
 maar dan werkte het niet meer op computerscherm. Uiteindelijk de suggestie van Jan aangehouden waarin hij 3 hoogteniveaus
 voorstelt. In tegenstelling tot mijn initiele aanpak kreeg ik dit relatief makkelijk voor elkaar.
 
+
  
