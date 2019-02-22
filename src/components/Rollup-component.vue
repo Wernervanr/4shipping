@@ -1,9 +1,9 @@
 <template>
     <div class="component-holder" v-bind:style="{ height: setHeight}">
-            <div class="button-holder">
-                <button class="btn-light" v-on:click="increaseComponentSize">&#8679</button>
-                <button class="btn-light" v-on:click="decreaseComponentSize">&#8681</button>
-            </div>
+        <div class="button-holder">
+            <button class="btn-light" v-on:click="increaseComponentSize">&#8679</button>
+            <button class="btn-light" v-on:click="decreaseComponentSize">&#8681</button>
+        </div>
         <component :is="activeComponent"></component>
     </div>
 </template>
@@ -17,7 +17,7 @@
     export default {
         data () {
             return {
-                setHeight: '30px',
+                setHeight: '33px',
             }
         },
         props: [
@@ -25,7 +25,7 @@
         ],
         methods: {
             increaseComponentSize () {
-                if(this.setHeight === '30px'){
+                if(this.setHeight === '33px'){
                     this.setHeight = '20%';
                 } else if (this.setHeight === '20%') {
                     this.setHeight = '50%';
@@ -39,9 +39,19 @@
                 } else if (this.setHeight === '50%') {
                     this.setHeight = '20%';
                 } else if (this.setHeight === '20%') {
-                    this.setHeight = '30px';
+                    this.setHeight = '33px';
                 }
-            }
+            },
+            setHeightToTwentyPercent () {
+                this.setHeight = '20%';
+            },
+        },
+        watch: {
+            activeComponent: function() {
+                if (this.activeComponent !== ''){
+                    this.setHeightToTwentyPercent();
+                }
+            },
         },
         components: {
             appKaartInfo: KaartInfo,
@@ -54,7 +64,7 @@
 
 <style>
     .btn-light {
-        margin-top: 2px;
+        margin-top: 5px;
         margin-bottom: 4px;
         border-radius: 10%;
     }
@@ -64,9 +74,10 @@
         bottom: 98px;
         background: white;
         width: 100%;
+        transition-duration: 750ms;
     }
     .button-holder {
         border: none;
-        font-size: .8em;
+        font-size: .7em;
     }
 </style>

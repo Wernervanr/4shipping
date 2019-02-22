@@ -6,8 +6,6 @@ Vue.use(VueGoogleMaps, {
   load: {
     key: 'YOUR API KEY',
     libraries: 'places', // This is required if you use the Autocomplete plugin
-    // OR: libraries: 'places,drawing'
-    // OR: libraries: 'places,drawing,visualization'
   },
 });
 

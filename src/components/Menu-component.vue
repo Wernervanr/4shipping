@@ -50,7 +50,6 @@
             menuElement: MenuElement,
         }
     }
-
 </script>
 
 <style>

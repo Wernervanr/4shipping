@@ -1,11 +1,8 @@
 <template>
-    <div class="col-2 mr-auto ml-auto mt-auto mb-auto"
-         v-bind:class="{ pink: isClicked }"
-         v-on:click="makePink">
-        <div class="img-wrap">
-            <img class="pt-2" :src="'/src/assets/' + menuItem.imagename">
+    <div class="col-3 mr-auto ml-auto mt-auto mb-auto" v-bind:class="{ pink: isClicked }">
+        <div class="d-flex flex-column">
+            <img v-on:click="itemClicked" class="menu-icon pt-1 pb-1 ml-auto mr-auto" :src="'/src/assets/' + menuItem.imagename">
         </div>
-        <br>
         <span class="description-text">{{ menuItem.menutext }}</span>
     </div>
 </template>
@@ -22,7 +19,7 @@
             'activeItem',
         ],
         methods: {
-            makePink () {
+            itemClicked () {
                 this.$emit('item-is-clicked', this.menuItem.itemname);
                 this.isClicked = !this.isClicked;
             },
@@ -35,15 +32,10 @@
             },
         },
     }
-
 </script>
 
 <style>
-    img {
-        width: auto;
-        height: 100%;
-    }
-    .img-wrap {
+    .menu-icon {
         width: auto;
         height: 75px;
         display: inline-block;
