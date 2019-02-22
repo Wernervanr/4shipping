@@ -48,7 +48,7 @@
     }
     .map-position {
         position: absolute;
-        bottom: 20px;
+        bottom: 20%;
         left: 0;
     }
 
