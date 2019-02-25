@@ -4,7 +4,7 @@
             <img class="icon pt-1 pb-1 ml-auto mr-auto"
                  alt=" "
                  :src="'/src/components/rollup-infobox/kaart/assets/' + menuItem.imagename"
-                 @click.prevent="showItemComponent(menuItem.menutext)">
+                 @click.prevent="showComponent(menuItem.menutext)">
         </div>
         <span class="menu-text">{{ menuItem.menutext }}</span>
     </div>
@@ -16,8 +16,8 @@
             'menuItem',
         ],
         methods: {
-            showItemComponent(item) {
-                // Hier de eventBus.changeComponent(item) om het bijbehorende component in de rollup te tonen.
+            showComponent(item) {
+                // Hier de eventBus.changeComponent(item), (item) definieren als component op rollup-component.vue om het bijbehorende component in de rollup te tonen.
             },
         },
     }

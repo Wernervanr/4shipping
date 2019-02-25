@@ -1,7 +1,7 @@
 <template>
     <div class="col-3 mr-auto ml-auto mt-auto mb-auto" v-bind:class="{ pink: isClicked }">
         <div class="d-flex flex-column">
-            <img @click="itemClicked"
+            <img @click="showComponent"
                  class="menu-icon pt-1 pb-1 ml-auto mr-auto"
                  alt=" "
                  :src="'/src/components/menu/assets/' + menuItem.imagename">
@@ -22,7 +22,7 @@
             'menuItem',
         ],
         methods: {
-            itemClicked () {
+            showComponent () {
                 eventBus.changeComponent(this.menuItem.itemname);
                 this.isClicked = true;
             },
@@ -33,7 +33,7 @@
                     this.isClicked = false;
                 }
             });
-        }
+        },
     }
 </script>
 

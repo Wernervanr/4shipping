@@ -58,7 +58,9 @@
         created() {
             eventBus.$on('componentHasChanged', (activeComponent) => {
                 this.activeComponent = activeComponent;
-                this.increaseOneLevel();
+                if (this.setHeight === '33px') {
+                    this.increaseOneLevel();
+                }
             });
         },
     }

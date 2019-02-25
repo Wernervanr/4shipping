@@ -11,7 +11,7 @@
         <div class="item" v-for="item in items">
             <a class="item-link"
                href="#"
-               @click.prevent="showItemComponent({ item })"> {{ item }}
+               @click.prevent="showComponent({ item })"> {{ item }}
             </a>
         </div>
     </div>
@@ -58,8 +58,8 @@
             }
         },
         methods: {
-            showItemComponent(item) {
-                // Hier de eventBus.changeComponent(item) om het bijbehorende component in de rollup te tonen.
+            showComponent(item) {
+                // Hier de eventBus.changeComponent(item), (item) definieren als component op rollup-component.vue om het bijbehorende component in de rollup te tonen.
             }
         },
         components: {
