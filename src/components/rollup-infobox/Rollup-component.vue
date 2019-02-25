@@ -88,6 +88,8 @@
         width: 100%;
         transition-duration: 750ms;
         border-top: solid 1px #F0F0F0;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
     }
     .button-holder {
         border: none;
