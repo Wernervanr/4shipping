@@ -1,8 +1,12 @@
 <template>
     <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
         <div class="button-holder">
-            <button class="btn-secondary mr-1" v-on:click="increaseComponentSize">&#8679</button>
-            <button class="btn-secondary" v-on:click="decreaseComponentSize">&#8681</button>
+            <button class="btn-secondary mr-1"
+                    @click="increaseComponentSize">&#8679
+            </button>
+            <button class="btn-secondary"
+                    @click="decreaseComponentSize">&#8681
+            </button>
         </div>
         <component :is="activeComponent"></component>
     </div>

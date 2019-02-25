@@ -1,7 +1,7 @@
 <template>
     <div class="col-3 mr-auto ml-auto mt-auto mb-auto" v-bind:class="{ pink: isClicked }">
         <div class="d-flex flex-column">
-            <img v-on:click="itemClicked"
+            <img @click="itemClicked"
                  class="menu-icon pt-1 pb-1 ml-auto mr-auto"
                  alt=" "
                  :src="'/src/components/menu/assets/' + menuItem.imagename">

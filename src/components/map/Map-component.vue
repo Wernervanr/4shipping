@@ -1,6 +1,6 @@
 <template>
     <div class="maps-container">
-        <search-bar v-on:location-changed="changeLocation"></search-bar>
+        <search-bar @location-changed="changeLocation"></search-bar>
         <GmapMap
                 :center="coordinates"
                 :zoom="10"

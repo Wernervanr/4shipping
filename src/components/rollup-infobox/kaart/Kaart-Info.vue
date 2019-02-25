@@ -2,11 +2,17 @@
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
         <div class="content-holder row justify-content-around justify-content-md-center">
-            <content-button v-for="(menuIcon, index) in menuIcons" :key="index" :menu-item="menuIcon"></content-button>
+            <content-button v-for="(menuIcon, index) in menuIcons"
+                            :key="index"
+                            :menu-item="menuIcon">
+            </content-button>
         </div>
         <hr class="divider">
         <div class="item" v-for="item in items">
-            {{ item }}
+            <a class="item-link"
+               href="#"
+               @click.prevent="showItemComponent({ item })"> {{ item }}
+            </a>
         </div>
     </div>
 </template>
@@ -51,6 +57,11 @@
                 },
             }
         },
+        methods: {
+            showItemComponent(item) {
+                // Hier de eventBus.changeComponent(item) om het bijbehorende component in de rollup te tonen.
+            }
+        },
         components: {
             contentButton: ContentButton
         },
@@ -73,6 +84,14 @@
         padding-bottom: 10px;
         text-align: left;
         padding-left: 40px;
+    }
+
+    .item-link {
+        color: #2c3e50;
+    }
+
+    .item-link:hover {
+        color: #2c3e50;
     }
     .title {
         font-size: 1.2em;

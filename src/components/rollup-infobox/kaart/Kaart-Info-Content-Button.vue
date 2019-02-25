@@ -3,7 +3,8 @@
         <div class="d-flex flex-column">
             <img class="icon pt-1 pb-1 ml-auto mr-auto"
                  alt=" "
-                 :src="'/src/components/rollup-infobox/kaart/assets/' + menuItem.imagename">
+                 :src="'/src/components/rollup-infobox/kaart/assets/' + menuItem.imagename"
+                 @click.prevent="showItemComponent(menuItem.menutext)">
         </div>
         <span class="menu-text">{{ menuItem.menutext }}</span>
     </div>
@@ -14,6 +15,11 @@
         props: [
             'menuItem',
         ],
+        methods: {
+            showItemComponent(item) {
+                // Hier de eventBus.changeComponent(item) om het bijbehorende component in de rollup te tonen.
+            },
+        },
     }
 </script>
 
