@@ -1,5 +1,5 @@
 <template>
-    <div class="">
+    <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
         <div class="row justify-content-around justify-content-md-center">
             <info-item v-for="(menuIcon, index) in menuIcons" :key="index" :menu-item="menuIcon"></info-item>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import Icon from './Info-icon'
+    import Icon from './Kaart-Info-Content-Button'
     export default {
         data () {
             return {
@@ -71,7 +71,7 @@
     }
     .title {
         font-size: 1.2em;
-        margin: 20px 0px 20px 0px;
+        margin: 20px 0 20px 0;
         font-weight: 500;
     }
 </style>

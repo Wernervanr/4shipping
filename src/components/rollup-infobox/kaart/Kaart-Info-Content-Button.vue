@@ -1,7 +1,9 @@
 <template>
     <div class="col-2 pl-1">
         <div class="d-flex flex-column">
-            <img class="icon pt-1 pb-1 ml-auto mr-auto" :src="'/src/assets/' + menuItem.imagename">
+            <img class="icon pt-1 pb-1 ml-auto mr-auto"
+                 alt=" "
+                 :src="'/src/components/rollup-infobox/kaart/assets/' + menuItem.imagename">
         </div>
         <span class="menu-text">{{ menuItem.menutext }}</span>
     </div>

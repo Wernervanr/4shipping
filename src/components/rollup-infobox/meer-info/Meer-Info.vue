@@ -1,5 +1,5 @@
 <template>
-    <p>Meer info</p>
+    <p class="title">Meer informatie</p>
 </template>
 
 <script>

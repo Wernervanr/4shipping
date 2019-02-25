@@ -1,5 +1,5 @@
 <template>
-    <p>Transport</p>
+    <p class="title">Vracht</p>
 </template>
 
 <script>

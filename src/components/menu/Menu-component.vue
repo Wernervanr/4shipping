@@ -10,7 +10,7 @@
 </template>
 
 <script>
-    import MenuElement from './Menu-element-component.vue'
+    import MenuElement from './Menu-Element.vue'
 
     export default {
         data () {
@@ -19,22 +19,22 @@
                 menuItems: {
                     kaart: {
                         itemname: 'appKaartInfo',
-                        imagename: 'Kaart.svg',
+                        imagename: 'kaart.svg',
                         menutext: 'Kaart/route'
                     },
                     vracht: {
                         itemname: 'appVrachtInfo',
-                        imagename: 'Vracht.svg',
+                        imagename: 'vracht.svg',
                         menutext: 'Vracht'
                     },
                     transport: {
                         itemname: 'appTransportInfo',
-                        imagename: 'Transport.svg',
+                        imagename: 'transport.svg',
                         menutext: 'Transport'
                     },
                     meer: {
                         itemname: 'appMeerInfo',
-                        imagename: 'Meer.svg',
+                        imagename: 'meer.svg',
                         menutext: 'Meer'
                     },
                 },

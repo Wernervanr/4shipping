@@ -9,10 +9,10 @@
 </template>
 
 <script>
-    import KaartInfo from './rollup-infobox/Kaart-info-component.vue'
-    import VrachtInfo from './rollup-infobox/Vracht-info-component.vue'
-    import TransportInfo from './rollup-infobox/Transport-info-component.vue'
-    import MeerInfo from './rollup-infobox/Meer-info-component.vue'
+    import KaartInfo from './kaart/Kaart-Info.vue'
+    import VrachtInfo from './vracht-info/Vracht-Info.vue'
+    import TransportInfo from './transport-info/Transport-Info.vue'
+    import MeerInfo from './meer-info/Meer-Info.vue'
 
     export default {
         data () {
