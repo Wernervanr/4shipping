@@ -1,10 +1,10 @@
 <template>
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
-        <div class="row justify-content-around justify-content-md-center">
-            <info-item v-for="(menuIcon, index) in menuIcons" :key="index" :menu-item="menuIcon"></info-item>
+        <div class="content-holder row justify-content-around justify-content-md-center">
+            <content-button v-for="(menuIcon, index) in menuIcons" :key="index" :menu-item="menuIcon"></content-button>
         </div>
-        <hr>
+        <hr class="divider">
         <div class="item" v-for="item in items">
             {{ item }}
         </div>
@@ -12,7 +12,7 @@
 </template>
 
 <script>
-    import Icon from './Kaart-Info-Content-Button'
+    import ContentButton from './Kaart-Info-Content-Button'
     export default {
         data () {
             return {
@@ -47,21 +47,26 @@
                     afvalbak: {
                         imagename: 'afvalbak.svg',
                         menutext: 'Afvalplaats'
-                    }
+                    },
                 },
             }
         },
         components: {
-            infoItem: Icon
+            contentButton: ContentButton
         },
     }
 
 </script>
 
 <style>
-    hr {
+    .divider {
         margin-bottom: .3em;
     }
+
+    .content-holder {
+        margin: 0;
+    }
+
     .item {
         border-bottom: solid .5px #F0F0F0;
         padding-top: 10px;

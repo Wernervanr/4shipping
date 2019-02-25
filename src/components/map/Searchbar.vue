@@ -16,7 +16,6 @@
                     (this.$refs.autocomplete),
                     {types: ['geocode']}
                 );
-
                 this.autocomplete.addListener('place_changed', () => {
                     let place = this.autocomplete.getPlace();
                     let coordinates = {
@@ -58,6 +57,6 @@
         top: 30px;
         left: 50%;
         transform: translate(-50%, -50%);
-        z-index: 5;
+        z-index: 1;
     }
 </style>

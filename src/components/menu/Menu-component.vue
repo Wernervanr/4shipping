@@ -1,10 +1,8 @@
 <template>
-    <div class="menu-bar menu-position row">
+    <div class="menu-bar row">
         <menu-element v-for="(menuItem, index) in menuItems"
                       :key="index"
-                      :menuItem="menuItem"
-                      :activeItem="activeItem"
-                      v-on:item-is-clicked="changeActiveItem">
+                      :menuItem="menuItem">
         </menu-element>
     </div>
 </template>
@@ -15,7 +13,6 @@
     export default {
         data () {
             return {
-                activeItem: 'appKaartInfo',
                 menuItems: {
                     kaart: {
                         itemname: 'appKaartInfo',
@@ -40,12 +37,6 @@
                 },
             }
         },
-        methods: {
-            changeActiveItem (event) {
-                this.activeItem = event;
-                this.$emit('item-activated', this.activeItem);
-            },
-        },
         components: {
             menuElement: MenuElement,
         }
@@ -53,16 +44,12 @@
 </script>
 
 <style>
-    .row {
-        margin: 0;
-    }
     .menu-bar {
         background: #16153D;
         width: 100%;
-    }
-    .menu-position {
         position: absolute;
         bottom: 0;
-        z-index: 10;
+        z-index: 1;
+        margin: 0;
     }
 </style>
