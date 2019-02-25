@@ -4,9 +4,17 @@ import App from './App.vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'YOUR API KEY',
-    libraries: 'places', // This is required if you use the Autocomplete plugin
+    key: 'AIzaSyB3ynuqJl-pCI54a6vatgygSFDGsrGCAqk',
+    libraries: 'places'
   },
+});
+
+export const eventBus = new Vue({
+  methods: {
+    changeComponent(componentName) {
+      this.$emit('componentHasChanged', componentName);
+    }
+  }
 });
 
 new Vue({

@@ -27,6 +27,4 @@
         height: 60px;
         display: inline-block;
     }
-
-
 </style>

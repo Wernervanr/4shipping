@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <app-map></app-map>
-    <app-rollup :activeComponent="activeComponent"></app-rollup>
-    <app-menu v-on:item-activated="changeActiveComponent"></app-menu>
+    <app-rollup></app-rollup>
+    <app-menu></app-menu>
   </div>
 </template>
 
@@ -13,17 +13,6 @@
 
   export default {
     name: 'app',
-    data () {
-      return {
-        activeComponent: '',
-      }
-    },
-    methods : {
-      changeActiveComponent (event) {
-        this.activeComponent = event;
-        console.log(this.activeComponent);
-      },
-    },
     components: {
       appRollup: Rollup,
       appMap: Map,

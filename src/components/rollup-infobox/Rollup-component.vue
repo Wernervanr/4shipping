@@ -9,6 +9,7 @@
 </template>
 
 <script>
+    import { eventBus } from '../../main.js';
     import KaartInfo from './kaart/Kaart-Info.vue'
     import VrachtInfo from './vracht-info/Vracht-Info.vue'
     import TransportInfo from './transport-info/Transport-Info.vue'
@@ -18,11 +19,9 @@
         data () {
             return {
                 setHeight: '33px',
+                activeComponent: ''
             }
         },
-        props: [
-            'activeComponent',
-        ],
         methods: {
             increaseComponentSize () {
                 if(this.setHeight === '33px'){
@@ -42,15 +41,8 @@
                     this.setHeight = '33px';
                 }
             },
-            setHeightToTwentyThreePercent () {
+            increaseOneLevel () {
                 this.setHeight = '23%';
-            },
-        },
-        watch: {
-            activeComponent: function() {
-                if (this.activeComponent !== ''){
-                    this.setHeightToTwentyThreePercent();
-                }
             },
         },
         components: {
@@ -58,6 +50,12 @@
             appVrachtInfo: VrachtInfo,
             appTransportInfo: TransportInfo,
             appMeerInfo: MeerInfo,
+        },
+        created() {
+            eventBus.$on('componentHasChanged', (activeComponent) => {
+                this.activeComponent = activeComponent;
+                this.increaseOneLevel();
+            });
         },
     }
 </script>
@@ -77,7 +75,7 @@
         background: #16153D;
     }
     .component-holder {
-        z-index: 5;
+        z-index: 2;
         position: absolute;
         bottom: 78px;
         background: white;

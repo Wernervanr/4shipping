@@ -11,6 +11,7 @@
 </template>
 
 <script>
+    import { eventBus } from '../../main.js';
     export default {
         data () {
             return {
@@ -19,21 +20,20 @@
         },
         props: [
             'menuItem',
-            'activeItem',
         ],
         methods: {
             itemClicked () {
-                this.$emit('item-is-clicked', this.menuItem.itemname);
+                eventBus.changeComponent(this.menuItem.itemname);
                 this.isClicked = true;
             },
         },
-        watch: {
-            activeItem: function() {
-                if (this.activeItem !== this.menuItem.itemname){
+        created() {
+            eventBus.$on('componentHasChanged', (activeComponent) => {
+                if (activeComponent !== this.menuItem.itemname) {
                     this.isClicked = false;
                 }
-            },
-        },
+            });
+        }
     }
 </script>
 
