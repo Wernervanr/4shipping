@@ -15,24 +15,24 @@
             return {
                 menuItems: {
                     kaart: {
-                        itemname: 'appKaartInfo',
-                        imagename: 'kaart.svg',
-                        menutext: 'Kaart/route'
+                        componentName: 'appKaartInfo',
+                        imageName: 'kaart.svg',
+                        menuText: 'Kaart/route'
                     },
                     vracht: {
-                        itemname: 'appVrachtInfo',
-                        imagename: 'vracht.svg',
-                        menutext: 'Vracht'
+                        componentName: 'appVrachtInfo',
+                        imageName: 'vracht.svg',
+                        menuText: 'Vracht'
                     },
                     transport: {
-                        itemname: 'appTransportInfo',
-                        imagename: 'transport.svg',
-                        menutext: 'Transport'
+                        componentName: 'appTransportInfo',
+                        imageName: 'transport.svg',
+                        menuText: 'Transport'
                     },
                     meer: {
-                        itemname: 'appMeerInfo',
-                        imagename: 'meer.svg',
-                        menutext: 'Meer'
+                        componentName: 'appMeerInfo',
+                        imageName: 'meer.svg',
+                        menuText: 'Meer'
                     },
                 },
             }

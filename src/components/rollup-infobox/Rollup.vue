@@ -14,7 +14,7 @@
 
 <script>
     import { eventBus } from '../../main.js';
-    import KaartInfo from './kaart/Kaart-Info.vue'
+    import KaartInfo from './kaart/Kaart.vue'
     import VrachtInfo from './vracht-info/Vracht-Info.vue'
     import TransportInfo from './transport-info/Transport-Info.vue'
     import MeerInfo from './meer-info/Meer-Info.vue'
@@ -23,7 +23,7 @@
         data () {
             return {
                 setHeight: '33px',
-                activeComponent: ''
+                activeComponent: String
             }
         },
         methods: {
@@ -76,7 +76,6 @@
         border-color: #16153D;
         color: black;
     }
-
     .btn-secondary:hover {
         background: #16153D;
     }
