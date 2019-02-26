@@ -23,7 +23,7 @@
         data () {
             return {
                 setHeight: '33px',
-                activeComponent: ''
+                activeComponent: String
             }
         },
         methods: {
@@ -76,7 +76,6 @@
         border-color: #16153D;
         color: black;
     }
-
     .btn-secondary:hover {
         background: #16153D;
     }

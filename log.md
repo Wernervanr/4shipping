@@ -50,6 +50,8 @@ Voor elk menu item een nieuw menu-element-compontent. De menu opties in de data 
 dragen, en de naam van het menu item. Door dit te binden aan een prop in de menu-element-component, hoeft in de toekomst bij 
 een nieuw menu element alleen de data in het menu-component aangepast te worden.
 
+Totaal ongeveer 3 uur aan besteed, inclusief het vormgeven van de iconen.
+
 ## De Rollout
 De rollout toont de informatie afhankelijk van de knop die ingedrukt wordt. De hoogte hiervan wilde ik in eerste instantie
 volledig aan de gebruiker over laten. Door na een klik de hoogte van de rollout relatief te maken aan de positie van de muis
@@ -57,6 +59,8 @@ op het scherm zou dit moeten werken. Dit werkte ook, maar omdat dit afhankelijk 
 niet op tablets en telefoonschermen. Ik had uit kunnen zoeken hoe dit met een 'touchhold' oid had gekund ipv een 'mouseout',
 maar dan werkte het niet meer op computerscherm. Uiteindelijk de suggestie van Jan aangehouden waarin hij 3 hoogteniveaus
 voorstelt. In tegenstelling tot mijn initiele aanpak kreeg ik dit relatief makkelijk voor elkaar.
+
+
 
 Nog te doen: 
 - rollout verder beschrijven in log,

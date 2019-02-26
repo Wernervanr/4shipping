@@ -3,28 +3,31 @@
         <div class="d-flex flex-column">
             <img class="icon pt-1 pb-1 ml-auto mr-auto"
                  alt=" "
-                 :src="'/src/components/rollup-infobox/kaart/assets/' + menuItem.imagename"
-                 @click.prevent="showComponent(menuItem.menutext)">
+                 :src="'/src/components/rollup-infobox/kaart/assets/' + contentItem.imageName"
+                 @click="showComponent">
         </div>
-        <span class="menu-text">{{ menuItem.menutext }}</span>
+        <span class="content-text">{{ contentItem.itemText }}</span>
     </div>
 </template>
 
 <script>
+    import { eventBus } from '../../../main.js';
     export default {
-        props: [
-            'menuItem',
-        ],
+        props: {
+            contentItem: Object,
+        },
         methods: {
-            showComponent(item) {
-                // Hier de eventBus.changeComponent(item), (item) definieren als component op rollup-component.vue om het bijbehorende component in de rollup te tonen.
+            showComponent() {
+                console.log(this.contentItem.componentName);
+                // Hier de eventBus.changeComponent(this.menuItem.componentName);
+                // Parameter definieren als component op Rollup-component.vue om het bijbehorende component in de rollup te tonen.
             },
         },
     }
 </script>
 
 <style>
-    .menu-text {
+    .content-text {
         font-size: .6em;
         font-weight: 500;
     }

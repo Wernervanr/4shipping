@@ -2,68 +2,95 @@
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
         <div class="content-holder row justify-content-around justify-content-md-center">
-            <content-button v-for="(menuIcon, index) in menuIcons"
+            <content-button v-for="(itemWithImage, index) in itemsWithImage"
                             :key="index"
-                            :menu-item="menuIcon">
+                            :content-item="itemWithImage">
             </content-button>
         </div>
         <hr class="divider">
-        <div class="item" v-for="item in items">
-            <a class="item-link"
-               href="#"
-               @click.prevent="showComponent({ item })"> {{ item }}
-            </a>
-        </div>
+        <content-text v-for="(item, index) in items"
+                      :key="index"
+                      :content-item="item">
+        </content-text>
     </div>
 </template>
 
 <script>
     import ContentButton from './Kaart-Info-Content-Button'
+    import ContentText from './Kaart-Text-Content'
     export default {
         data () {
             return {
-                items: [
-                    'Autosteiger',
-                    'Bunkerstation',
-                    'Drinkwater',
-                    'Sluizen',
-                    'Haven',
-                    'Restaurants',
-                    'Toiletten',
-                    'Aanleg plaatsen',
-                    'Tank stations'
-                ],
-                menuIcons: {
+                items: {
+                    autosteiger: {
+                        componentName: 'appAutoSteiger',
+                        itemText: 'Autosteiger',
+                    },
+                    bunkerstation: {
+                        componentName: 'appBunkerStation',
+                        itemText: 'Bunkerstation',
+                    },
+                    drinkwater: {
+                        componentName: 'appDrinkWater',
+                        itemText: 'Drinkwater',
+                    },
+                    sluizen: {
+                        componentName: 'appSluizen',
+                        itemText: 'Sluizen',
+                    },
+                    haven: {
+                        componentName: 'appHaven',
+                        itemText: 'Haven',
+                    },
+                    restaurants: {
+                        componentName: 'appRestaurants',
+                        itemText: 'Restaurants',
+                    },
+                    toiletten: {
+                        componentName: 'appToiletten',
+                        itemText: 'Toiletten',
+                    },
+                    aanlegplaatsen: {
+                        componentName: 'appAanlegPlaatsen',
+                        itemText: 'Aanleg plaatsen',
+                    },
+                    tankstations: {
+                        componentName: 'appTankStations',
+                        itemText: 'Tank stations',
+                    },
+                },
+                itemsWithImage: {
                     arrow: {
-                        imagename: 'arrow.svg',
-                        menutext: 'Sluizen'
+                        componentName: 'appSluizen',
+                        imageName: 'arrow.svg',
+                        itemText: 'Sluizen'
                     },
                     anker: {
-                        imagename: 'anker.svg',
-                        menutext: 'Ligplaats'
+                        componentName: 'appLigplaats',
+                        imageName: 'anker.svg',
+                        itemText: 'Ligplaats'
                     },
                     waterpas: {
-                        imagename: 'waterpas.svg',
-                        menutext: 'Waterstand'
+                        componentName: 'appWaterstand',
+                        imageName: 'waterpas.svg',
+                        itemText: 'Waterstand'
                     },
                     fabriek: {
-                        imagename: 'fabriek.svg',
-                        menutext: 'Terminals'
+                        componentName: 'appTerminals',
+                        imageName: 'fabriek.svg',
+                        itemText: 'Terminals'
                     },
                     afvalbak: {
-                        imagename: 'afvalbak.svg',
-                        menutext: 'Afvalplaats'
+                        componentName: 'appAfvalplaats',
+                        imageName: 'afvalbak.svg',
+                        itemText: 'Afvalplaats'
                     },
                 },
             }
         },
-        methods: {
-            showComponent(item) {
-                // Hier de eventBus.changeComponent(item), (item) definieren als component op rollup-component.vue om het bijbehorende component in de rollup te tonen.
-            }
-        },
         components: {
-            contentButton: ContentButton
+            contentButton: ContentButton,
+            contentText: ContentText
         },
     }
 
@@ -73,25 +100,8 @@
     .divider {
         margin-bottom: .3em;
     }
-
     .content-holder {
         margin: 0;
-    }
-
-    .item {
-        border-bottom: solid .5px #F0F0F0;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        text-align: left;
-        padding-left: 40px;
-    }
-
-    .item-link {
-        color: #2c3e50;
-    }
-
-    .item-link:hover {
-        color: #2c3e50;
     }
     .title {
         font-size: 1.2em;

@@ -4,9 +4,9 @@
             <img @click="showComponent"
                  class="menu-icon pt-1 pb-1 ml-auto mr-auto"
                  alt=" "
-                 :src="'/src/components/menu/assets/' + menuItem.imagename">
+                 :src="'/src/components/menu/assets/' + menuItem.imageName">
         </div>
-        <span class="description-text">{{ menuItem.menutext }}</span>
+        <span class="description-text">{{ menuItem.menuText }}</span>
     </div>
 </template>
 
@@ -18,18 +18,18 @@
                 isClicked: false,
             }
         },
-        props: [
-            'menuItem',
-        ],
+        props: {
+            menuItem: Object,
+        },
         methods: {
             showComponent () {
-                eventBus.changeComponent(this.menuItem.itemname);
+                eventBus.changeComponent(this.menuItem.componentName);
                 this.isClicked = true;
             },
         },
         created() {
             eventBus.$on('componentHasChanged', (activeComponent) => {
-                if (activeComponent !== this.menuItem.itemname) {
+                if (activeComponent !== this.menuItem.componentName) {
                     this.isClicked = false;
                 }
             });
