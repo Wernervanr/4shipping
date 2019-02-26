@@ -7,9 +7,9 @@
 </template>
 
 <script>
-    import Map from './components/map/Map-component.vue'
-    import Menu from './components/menu/Menu-component.vue'
-    import Rollup from './components/rollup-infobox/Rollup-component.vue'
+    import Map from './components/map/Map.vue'
+    import Menu from './components/menu/Menu.vue'
+    import Rollup from './components/rollup-infobox/Rollup.vue'
 
     export default {
         name: 'app',

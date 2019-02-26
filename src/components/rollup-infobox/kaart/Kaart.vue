@@ -16,8 +16,8 @@
 </template>
 
 <script>
-    import ContentButton from './Kaart-Info-Content-Button'
-    import ContentText from './Kaart-Text-Content'
+    import ContentButton from './Kaart-Content-Button'
+    import ContentText from './Kaart-Content-Text'
     export default {
         data () {
             return {
