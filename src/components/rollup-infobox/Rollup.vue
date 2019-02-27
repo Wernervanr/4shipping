@@ -1,12 +1,7 @@
 <template>
     <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
         <div class="button-holder">
-            <button class="btn-secondary"
-                    @click="increaseComponentSize">&#8679
-            </button>
-            <button class="btn-secondary"
-                    @click="decreaseComponentSize">&#8681
-            </button>
+            <button class="resize-button"></button>
         </div>
         <component :is="activeComponent"></component>
     </div>
@@ -22,7 +17,7 @@
     export default {
         data () {
             return {
-                setHeight: '33px',
+                setHeight: '18px',
                 activeComponent: String
             }
         },
@@ -58,7 +53,7 @@
         created() {
             eventBus.$on('componentHasChanged', (activeComponent) => {
                 this.activeComponent = activeComponent;
-                if (this.setHeight === '33px') {
+                if (this.setHeight === '18px') {
                     this.increaseOneLevel();
                 }
             });
@@ -67,19 +62,6 @@
 </script>
 
 <style>
-    .btn-secondary {
-        margin-top: 5px;
-        margin-bottom: 4px;
-        border-radius: 10%;
-        width: 50px;
-        background: white;
-        border-color: #16153D;
-        color: black;
-        box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.09);
-    }
-    .btn-secondary:hover {
-        background: #16153D;
-    }
     .component-holder {
         z-index: 2;
         position: absolute;
@@ -98,5 +80,14 @@
     }
     .clearfix {
         overflow: scroll;
+    }
+    .resize-button {
+        background-color: #E8E8E8;
+        width: 130px;
+        height: 6px;
+        position: relative;
+        top: -4px;
+        margin-bottom: 0;
+        border-radius: 2px;
     }
 </style>
