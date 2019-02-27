@@ -4,7 +4,7 @@ import App from './App.vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'AIzaSyB3ynuqJl-pCI54a6vatgygSFDGsrGCAqk',
+    key: '',
     libraries: 'places'
   },
 });
