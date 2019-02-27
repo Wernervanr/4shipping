@@ -1,7 +1,7 @@
 <template>
     <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
         <div class="button-holder">
-            <button class="resize-button"></button>
+            <button v-touch:moving="startHandler" v-touch:end="endHandler" class="resize-button"></button>
         </div>
         <component :is="activeComponent"></component>
     </div>
@@ -30,6 +30,12 @@
                 } else if (this.setHeight === '50%') {
                     this.setHeight = '75%';
                 }
+            },
+            startHandler () {
+                console.log(event.targetTouches[0]);
+            },
+            endHandler () {
+                console.log('doei');
             },
             decreaseComponentSize () {
                 if(this.setHeight === '75%'){
