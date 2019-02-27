@@ -32,7 +32,10 @@
                 }
             },
             startHandler () {
-                console.log(event.targetTouches[0]);
+                let fullScreen = document.body.clientHeight;
+                let currentMouseLocation = event.targetTouches[0].clientY;
+                console.log(fullScreen);
+                console.log(currentMouseLocation);
             },
             endHandler () {
                 console.log('doei');
