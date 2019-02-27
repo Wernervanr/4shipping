@@ -2,9 +2,9 @@
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
         <div class="content-holder row justify-content-around justify-content-md-center">
-            <content-button v-for="(itemWithImage, index) in itemsWithImage"
+            <content-button v-for="(itemWithIcon, index) in itemsWithIcon"
                             :key="index"
-                            :content-item="itemWithImage">
+                            :content-item="itemWithIcon">
             </content-button>
         </div>
         <hr class="divider">
@@ -59,30 +59,30 @@
                         itemText: 'Tank stations',
                     },
                 },
-                itemsWithImage: {
+                itemsWithIcon: {
                     arrow: {
                         componentName: 'appSluizen',
-                        imageName: 'arrow.svg',
+                        itemClass: 'fas fa-angle-double-up sluizen',
                         itemText: 'Sluizen'
                     },
                     anker: {
                         componentName: 'appLigplaats',
-                        imageName: 'anker.svg',
+                        itemClass: 'fas fa-anchor anker',
                         itemText: 'Ligplaats'
                     },
                     waterpas: {
                         componentName: 'appWaterstand',
-                        imageName: 'waterpas.svg',
+                        itemClass: 'fas fa-ruler-vertical waterstand',
                         itemText: 'Waterstand'
                     },
                     fabriek: {
                         componentName: 'appTerminals',
-                        imageName: 'fabriek.svg',
+                        itemClass: 'fas fa-industry terminals',
                         itemText: 'Terminals'
                     },
                     afvalbak: {
                         componentName: 'appAfvalplaats',
-                        imageName: 'afvalbak.svg',
+                        itemClass: 'fas fa-trash-alt afvalplaats',
                         itemText: 'Afvalplaats'
                     },
                 },

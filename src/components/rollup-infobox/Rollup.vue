@@ -1,7 +1,7 @@
 <template>
     <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
         <div class="button-holder">
-            <button class="btn-secondary mr-1"
+            <button class="btn-secondary"
                     @click="increaseComponentSize">&#8679
             </button>
             <button class="btn-secondary"
@@ -75,6 +75,7 @@
         background: white;
         border-color: #16153D;
         color: black;
+        box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.09);
     }
     .btn-secondary:hover {
         background: #16153D;
@@ -89,6 +90,7 @@
         border-top: solid 1px #F0F0F0;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
+        box-shadow: -1px -9px 15px -4px rgba(152,152,152,0.6);
     }
     .button-holder {
         border: none;

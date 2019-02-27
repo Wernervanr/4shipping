@@ -1,10 +1,10 @@
 <template>
     <div class="col-2 pl-1">
         <div class="d-flex flex-column">
-            <img class="icon pt-1 pb-1 ml-auto mr-auto"
-                 alt=" "
-                 :src="'/src/components/rollup-infobox/kaart/assets/' + contentItem.imageName"
-                 @click="showComponent">
+            <div class="icon-holder ml-auto mr-auto">
+                <p :class="['icon', contentItem.itemClass]"
+                   @click="showComponent"></p>
+            </div>
         </div>
         <span class="content-text">{{ contentItem.itemText }}</span>
     </div>
@@ -31,9 +31,29 @@
         font-size: .6em;
         font-weight: 500;
     }
+
     .icon {
-        width: auto;
-        height: 60px;
-        display: inline-block;
+        padding-top: 20%;
+        margin-bottom: auto;
+        font-size: 30px;
+        color: white;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+    }
+    .sluizen {
+        background: #F5A623;
+    }
+    .anker {
+        background: #7DD322;
+    }
+    .waterstand {
+        background: #4B8FE2;
+    }
+    .terminals {
+        background: #D0011B;
+    }
+    .afvalplaats {
+        background: #9B9B9B;
     }
 </style>
