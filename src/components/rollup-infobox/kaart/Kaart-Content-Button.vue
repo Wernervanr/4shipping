@@ -1,12 +1,13 @@
 <template>
-    <div class="col-2 pl-1">
+    <div class="col-2 pl-0 ml-auto mr-auto">
         <div class="d-flex flex-column">
-            <div class="icon-holder ml-auto mr-auto">
+            <div class="ml-auto mr-auto">
                 <p :class="['icon', contentItem.itemClass]"
                    @click="showComponent"></p>
+                <br>
+                <span class="content-text">{{ contentItem.itemText }}</span>
             </div>
         </div>
-        <span class="content-text">{{ contentItem.itemText }}</span>
     </div>
 </template>
 
@@ -35,10 +36,10 @@
     .icon {
         padding-top: 20%;
         margin-bottom: auto;
-        font-size: 30px;
+        font-size: 25px;
         color: white;
-        width: 55px;
-        height: 55px;
+        width: 50px;
+        height: 50px;
         border-radius: 50%;
     }
     .sluizen {

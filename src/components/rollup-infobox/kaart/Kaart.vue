@@ -1,7 +1,7 @@
 <template>
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
-        <div class="content-holder row justify-content-around justify-content-md-center">
+        <div class="content-holder row justify-content-center">
             <content-button v-for="(itemWithIcon, index) in itemsWithIcon"
                             :key="index"
                             :content-item="itemWithIcon">

@@ -2,8 +2,8 @@
     <div class="col-3 mr-auto ml-auto mt-auto mb-auto" v-bind:class="{ pink: isClicked }">
         <div class="d-flex flex-column">
             <img @click="showComponent"
-                 class="menu-icon pt-1 pb-1 ml-auto mr-auto"
-                 alt=" "
+                 class="mt-1 menu-icon ml-auto mr-auto"
+                 alt=""
                  :src="'/src/components/menu/assets/' + menuItem.imageName">
         </div>
         <span class="description-text">{{ menuItem.menuText }}</span>
@@ -40,13 +40,13 @@
 <style>
     .menu-icon {
         width: auto;
-        height: 55px;
+        height: 40px;
         display: inline-block;
     }
 
     .description-text {
         color: white;
-        font-size: .9em;
+        font-size: .7em;
     }
     .pink {
         filter: sepia(100%) contrast(10%) saturate(10000%) hue-rotate(245deg);

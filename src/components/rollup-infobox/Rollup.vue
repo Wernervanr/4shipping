@@ -1,9 +1,12 @@
 <template>
-    <div class="component-holder clearfix" v-bind:style="{ height: setHeight}">
-        <div class="button-holder">
-            <button v-touch:moving="startHandler" v-touch:end="endHandler" class="resize-button"></button>
+    <div class="info-list" v-bind:style="{ height: setHeight + '%'}">
+        <div class="button-holder col-12"
+             v-touch:moving="startHandler">
+            <button class="resize-button"></button>
         </div>
-        <component :is="activeComponent"></component>
+        <div class="component-holder mr-1 ml-1">
+            <component :is="activeComponent"></component>
+        </div>
     </div>
 </template>
 
@@ -17,40 +20,22 @@
     export default {
         data () {
             return {
-                setHeight: '18px',
+                setHeight: '',
                 activeComponent: String
             }
         },
         methods: {
-            increaseComponentSize () {
-                if(this.setHeight === '33px'){
-                    this.setHeight = '23%';
-                } else if (this.setHeight === '23%') {
-                    this.setHeight = '50%';
-                } else if (this.setHeight === '50%') {
-                    this.setHeight = '75%';
-                }
-            },
             startHandler () {
-                let fullScreen = document.body.clientHeight;
+                let fullScreen = screen.height;
                 let currentMouseLocation = event.targetTouches[0].clientY;
-                console.log(fullScreen);
-                console.log(currentMouseLocation);
-            },
-            endHandler () {
-                console.log('doei');
-            },
-            decreaseComponentSize () {
-                if(this.setHeight === '75%'){
-                    this.setHeight = '50%';
-                } else if (this.setHeight === '50%') {
-                    this.setHeight = '23%';
-                } else if (this.setHeight === '23%') {
-                    this.setHeight = '33px';
-                }
+
+                let newHeight = fullScreen - currentMouseLocation;
+
+                let newHeightTest = (newHeight / fullScreen) * 100;
+                this.setHeight = newHeightTest;
             },
             increaseOneLevel () {
-                this.setHeight = '23%';
+                this.setHeight = '20';
             },
         },
         components: {
@@ -62,7 +47,7 @@
         created() {
             eventBus.$on('componentHasChanged', (activeComponent) => {
                 this.activeComponent = activeComponent;
-                if (this.setHeight === '18px') {
+                if (this.setHeight < 20) {
                     this.increaseOneLevel();
                 }
             });
@@ -71,32 +56,34 @@
 </script>
 
 <style>
-    .component-holder {
-        z-index: 2;
+    .info-list {
+        z-index: 1;
         position: absolute;
-        bottom: 78px;
+        bottom: 0;
         background: white;
         width: 100%;
-        transition-duration: 750ms;
+        min-height: 90px;
+        max-height: 80%;
         border-top: solid 1px #F0F0F0;
         border-top-left-radius: 12px;
         border-top-right-radius: 12px;
         box-shadow: -1px -9px 15px -4px rgba(152,152,152,0.6);
+        overflow: hidden;
     }
     .button-holder {
         border: none;
         font-size: .7em;
     }
-    .clearfix {
-        overflow: scroll;
-    }
     .resize-button {
         background-color: #E8E8E8;
         width: 130px;
         height: 6px;
-        position: relative;
-        top: -4px;
-        margin-bottom: 0;
         border-radius: 2px;
+    }
+    .component-holder {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: scroll;
     }
 </style>

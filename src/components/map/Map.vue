@@ -12,7 +12,7 @@
                     mapTypeControl: false,
                 }"
                 map-type-id="terrain"
-                style="width: 100vw; height: 95vh"
+                style="width: 100vw; height: 94vh;"
                 class="map-position">
         </GmapMap>
     </div>
@@ -43,11 +43,7 @@
 
 <style>
     .maps-container {
-        position: relative;
-    }
-    .map-position {
-        position: absolute;
-        bottom: 20%;
-        left: 0;
+        width: 100%;
+        z-index: 0;
     }
 </style>

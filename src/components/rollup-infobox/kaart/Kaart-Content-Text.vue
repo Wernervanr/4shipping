@@ -29,7 +29,7 @@
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: left;
-        padding-left: 40px;
+        padding-left: 20px;
     }
 
     .item-link {
