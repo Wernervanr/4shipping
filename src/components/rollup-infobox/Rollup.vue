@@ -1,7 +1,6 @@
 <template>
-    <div class="info-list" v-bind:style="{ height: setHeight + '%'}">
-        <div class="button-holder col-12"
-             v-touch:moving="startHandler">
+    <div id="info" class="info-list" v-bind:style="{ height: setHeight + '%'}">
+        <div class="button-holder col-12">
             <button class="resize-button"></button>
         </div>
         <div class="component-holder mr-1 ml-1">
@@ -20,37 +19,49 @@
     export default {
         data () {
             return {
-                setHeight: '',
-                activeComponent: String
+                setHeight: 0,
+                activeComponent: String,
             }
         },
+        created() {
+            eventBus.$on('componentHasChanged', (activeComponent) => {
+                this.activeComponent = activeComponent;
+                if (this.setHeight < 30) {
+                    this.setHeight = 30;
+                }
+            });
+        },
+        mounted() {
+            let infoList = document.getElementById('info');
+            infoList.addEventListener('touchmove', this.startTouchHandler);
+            infoList.addEventListener('touchend', this.endTouchHandler);
+        },
         methods: {
-            startHandler () {
+            startTouchHandler () {
                 let fullScreen = screen.height;
-                let currentMouseLocation = event.targetTouches[0].clientY;
+                let currentCursorLocation = event.targetTouches[0].clientY;
+                let actualHeight = fullScreen - currentCursorLocation;
+                let actualHeightInPercentage = (actualHeight / fullScreen) * 103;
 
-                let newHeight = fullScreen - currentMouseLocation;
-
-                let newHeightTest = (newHeight / fullScreen) * 100;
-                this.setHeight = newHeightTest;
+                this.setHeight = actualHeightInPercentage;
             },
-            increaseOneLevel () {
-                this.setHeight = '20';
-            },
+            endTouchHandler () {
+                if (this.setHeight >= 0 && this.setHeight < 15) {
+                    this.setHeight = 1;
+                } else if (this.setHeight >= 15 && this.setHeight < 40) {
+                    this.setHeight = 30;
+                } else if (this.setHeight >= 40 && this.setHeight < 65) {
+                    this.setHeight = 55;
+                } else if (this.setHeight >= 65 && this.setHeight <= 80) {
+                    this.setHeight = 80;
+                }
+            }
         },
         components: {
             appKaartInfo: KaartInfo,
             appVrachtInfo: VrachtInfo,
             appTransportInfo: TransportInfo,
             appMeerInfo: MeerInfo,
-        },
-        created() {
-            eventBus.$on('componentHasChanged', (activeComponent) => {
-                this.activeComponent = activeComponent;
-                if (this.setHeight < 20) {
-                    this.increaseOneLevel();
-                }
-            });
         },
     }
 </script>
