@@ -1,11 +1,10 @@
 <template>
-    <div class="col-3 mr-auto ml-auto mt-auto mb-auto" v-bind:class="{ pink: isClicked }">
-        <div class="d-flex flex-column">
-            <img @click="showComponent"
-                 class="mt-1 menu-icon ml-auto mr-auto"
-                 alt=""
-                 :src="'/src/components/menu/assets/' + menuItem.imageName">
-        </div>
+    <div class="col-3"
+         @click="showComponent"
+         v-bind:class="{ pink: isClicked }">
+        <img class="menu-icon d-flex flex-column"
+             :alt="menuItem.imageName"
+             :src="'/src/components/menu/assets/' + menuItem.imageName">
         <span class="description-text">{{ menuItem.menuText }}</span>
     </div>
 </template>
@@ -42,8 +41,8 @@
         width: auto;
         height: 40px;
         display: inline-block;
+        margin: 3px auto 0 auto;
     }
-
     .description-text {
         color: white;
         font-size: .7em;

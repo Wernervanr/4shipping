@@ -32,7 +32,6 @@
         font-size: .6em;
         font-weight: 500;
     }
-
     .icon {
         padding-top: 20%;
         margin-bottom: auto;

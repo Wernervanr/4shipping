@@ -1,13 +1,13 @@
 <template>
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
-        <div class="content-holder row justify-content-center">
+        <div class="m-0 row justify-content-center">
             <content-button v-for="(itemWithIcon, index) in itemsWithIcon"
                             :key="index"
                             :content-item="itemWithIcon">
             </content-button>
         </div>
-        <hr class="divider">
+        <hr class="mb-1">
         <content-text v-for="(item, index) in items"
                       :key="index"
                       :content-item="item">
@@ -93,19 +93,12 @@
             contentText: ContentText
         },
     }
-
 </script>
 
 <style>
-    .divider {
-        margin-bottom: .3em;
-    }
-    .content-holder {
-        margin: 0;
-    }
     .title {
         font-size: 1.2em;
-        margin: 20px 0 20px 0;
+        margin: 10px 0 20px 0;
         font-weight: 500;
     }
 </style>

@@ -31,11 +31,9 @@
         text-align: left;
         padding-left: 20px;
     }
-
     .item-link {
         color: #2c3e50;
     }
-
     .item-link:hover {
         color: #2c3e50;
     }
