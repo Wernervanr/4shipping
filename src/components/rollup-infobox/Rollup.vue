@@ -41,7 +41,7 @@
                 let fullScreen = screen.height;
                 let currentCursorLocation = event.targetTouches[0].clientY;
                 let actualHeight = fullScreen - currentCursorLocation;
-                let actualHeightInPercentage = (actualHeight / fullScreen) * 103;
+                let actualHeightInPercentage = (actualHeight / fullScreen) * 105;
 
                 this.setHeight = actualHeightInPercentage;
             },
