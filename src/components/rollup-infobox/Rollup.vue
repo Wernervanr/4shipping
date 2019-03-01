@@ -41,18 +41,18 @@
                 let fullScreen = screen.height;
                 let currentCursorLocation = event.targetTouches[0].clientY;
                 let actualHeight = fullScreen - currentCursorLocation;
-                let actualHeightInPercentage = (actualHeight / fullScreen) * 105;
+                let actualHeightInPercentage = (actualHeight / fullScreen) * 100;
 
                 this.setHeight = actualHeightInPercentage;
             },
             endTouchHandler () {
                 if (this.setHeight >= 0 && this.setHeight < 15) {
                     this.setHeight = 1;
-                } else if (this.setHeight >= 15 && this.setHeight < 40) {
+                } else if (this.setHeight >= 15 && this.setHeight < 45) {
                     this.setHeight = 30;
-                } else if (this.setHeight >= 40 && this.setHeight < 65) {
+                } else if (this.setHeight >= 45 && this.setHeight < 70) {
                     this.setHeight = 55;
-                } else if (this.setHeight >= 65 && this.setHeight <= 80) {
+                } else if (this.setHeight >= 70 && this.setHeight <= 80) {
                     this.setHeight = 80;
                 }
             }
