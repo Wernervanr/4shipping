@@ -4,7 +4,7 @@ import App from './App.vue'
 
 Vue.use(VueGoogleMaps, {
   load: {
-    key: 'YOUR API KEY',
+    key: '',
     libraries: 'places'
   },
 });

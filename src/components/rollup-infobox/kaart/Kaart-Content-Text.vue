@@ -29,13 +29,11 @@
         padding-top: 10px;
         padding-bottom: 10px;
         text-align: left;
-        padding-left: 40px;
+        padding-left: 20px;
     }
-
     .item-link {
         color: #2c3e50;
     }
-
     .item-link:hover {
         color: #2c3e50;
     }

@@ -1,11 +1,10 @@
 <template>
-    <div class="col-3 mr-auto ml-auto mt-auto mb-auto" v-bind:class="{ pink: isClicked }">
-        <div class="d-flex flex-column">
-            <img @click="showComponent"
-                 class="menu-icon pt-1 pb-1 ml-auto mr-auto"
-                 alt=" "
-                 :src="'/src/components/menu/assets/' + menuItem.imageName">
-        </div>
+    <div class="col-3"
+         @click="showComponent"
+         v-bind:class="{ pink: isClicked }">
+        <img class="menu-icon d-flex flex-column"
+             :alt="menuItem.imageName"
+             :src="'/src/components/menu/assets/' + menuItem.imageName">
         <span class="description-text">{{ menuItem.menuText }}</span>
     </div>
 </template>
@@ -40,13 +39,13 @@
 <style>
     .menu-icon {
         width: auto;
-        height: 55px;
+        height: 40px;
         display: inline-block;
+        margin: 3px auto 0 auto;
     }
-
     .description-text {
         color: white;
-        font-size: .9em;
+        font-size: .7em;
     }
     .pink {
         filter: sepia(100%) contrast(10%) saturate(10000%) hue-rotate(245deg);

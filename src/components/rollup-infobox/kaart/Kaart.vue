@@ -1,13 +1,13 @@
 <template>
     <div>
         <p class="title">Verkeersinformatie voor de binnenvaart</p>
-        <div class="content-holder row justify-content-around justify-content-md-center">
-            <content-button v-for="(itemWithImage, index) in itemsWithImage"
+        <div class="m-0 row justify-content-center">
+            <content-button v-for="(itemWithIcon, index) in itemsWithIcon"
                             :key="index"
-                            :content-item="itemWithImage">
+                            :content-item="itemWithIcon">
             </content-button>
         </div>
-        <hr class="divider">
+        <hr class="mb-1">
         <content-text v-for="(item, index) in items"
                       :key="index"
                       :content-item="item">
@@ -59,30 +59,30 @@
                         itemText: 'Tank stations',
                     },
                 },
-                itemsWithImage: {
+                itemsWithIcon: {
                     arrow: {
                         componentName: 'appSluizen',
-                        imageName: 'arrow.svg',
+                        itemClass: 'fas fa-angle-double-up sluizen',
                         itemText: 'Sluizen'
                     },
                     anker: {
                         componentName: 'appLigplaats',
-                        imageName: 'anker.svg',
+                        itemClass: 'fas fa-anchor anker',
                         itemText: 'Ligplaats'
                     },
                     waterpas: {
                         componentName: 'appWaterstand',
-                        imageName: 'waterpas.svg',
+                        itemClass: 'fas fa-ruler-vertical waterstand',
                         itemText: 'Waterstand'
                     },
                     fabriek: {
                         componentName: 'appTerminals',
-                        imageName: 'fabriek.svg',
+                        itemClass: 'fas fa-industry terminals',
                         itemText: 'Terminals'
                     },
                     afvalbak: {
                         componentName: 'appAfvalplaats',
-                        imageName: 'afvalbak.svg',
+                        itemClass: 'fas fa-trash-alt afvalplaats',
                         itemText: 'Afvalplaats'
                     },
                 },
@@ -93,19 +93,12 @@
             contentText: ContentText
         },
     }
-
 </script>
 
 <style>
-    .divider {
-        margin-bottom: .3em;
-    }
-    .content-holder {
-        margin: 0;
-    }
     .title {
         font-size: 1.2em;
-        margin: 20px 0 20px 0;
+        margin: 10px 0 20px 0;
         font-weight: 500;
     }
 </style>
