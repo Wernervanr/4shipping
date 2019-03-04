@@ -73,7 +73,7 @@
         bottom: 0;
         background: white;
         width: 100%;
-        min-height: 90px;
+        min-height: 89px;
         max-height: 80%;
         border-top: solid 1px #F0F0F0;
         border-radius: 12px 12px 0 0;
