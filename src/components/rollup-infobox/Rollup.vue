@@ -32,9 +32,9 @@
             });
         },
         mounted() {
-            let infoList = document.getElementById('button-holder');
-            infoList.addEventListener('touchmove', this.startTouchHandler);
-            infoList.addEventListener('touchend', this.endTouchHandler);
+            let adjustHeightButton = document.getElementById('button-holder');
+            adjustHeightButton.addEventListener('touchmove', this.startTouchHandler);
+            adjustHeightButton.addEventListener('touchend', this.endTouchHandler);
         },
         methods: {
             startTouchHandler () {
