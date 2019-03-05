@@ -20,7 +20,6 @@
         methods: {
             showComponent() {
                 eventBus.changeSubComponent(this.contentItem.componentName);
-                // ComponentName definieren als component op Kaart.vue om het bijbehorende component in de rollup te tonen.
             },
         },
     }
