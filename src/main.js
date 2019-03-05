@@ -13,7 +13,10 @@ export const eventBus = new Vue({
   methods: {
     changeComponent(componentName) {
       this.$emit('componentHasChanged', componentName);
-    }
+    },
+    changeSubComponent(componentName) {
+      this.$emit('subComponentHasChanged', componentName);
+    },
   }
 });
 

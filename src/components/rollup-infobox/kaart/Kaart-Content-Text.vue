@@ -15,9 +15,8 @@
         },
         methods: {
             showComponent() {
-                console.log(this.contentItem.componentName);
-                // Hier de eventBus.changeComponent(this.contentItem.componentName);
-                // Parameter definieren als component op Rollup-component.vue om het bijbehorende component in de rollup te tonen.
+                eventBus.changeSubComponent(this.contentItem.componentName);
+                // componentName definieren als component op Kaart.vue om het bijbehorende component in de rollup te tonen.
             },
         },
     }

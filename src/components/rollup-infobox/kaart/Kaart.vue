@@ -1,26 +1,36 @@
 <template>
     <div>
-        <p class="title">Verkeersinformatie voor de binnenvaart</p>
-        <div class="m-0 row justify-content-center">
-            <content-button v-for="(itemWithIcon, index) in itemsWithIcon"
-                            :key="index"
-                            :content-item="itemWithIcon">
-            </content-button>
+        <div v-if="noActiveSubComponent">
+            <p class="title">Verkeersinformatie voor de binnenvaart</p>
+            <div class="m-0 row justify-content-center">
+                <content-button v-for="(itemWithIcon, index) in itemsWithIcon"
+                                :key="index"
+                                :content-item="itemWithIcon">
+                </content-button>
+            </div>
+            <hr class="mb-1">
+            <content-text v-for="(item, index) in items"
+                          :key="index"
+                          :content-item="item">
+            </content-text>
         </div>
-        <hr class="mb-1">
-        <content-text v-for="(item, index) in items"
-                      :key="index"
-                      :content-item="item">
-        </content-text>
+        <component v-if="!noActiveSubComponent"
+                   :is="activeSubComponent">
+        </component>
     </div>
 </template>
 
 <script>
-    import ContentButton from './Kaart-Content-Button'
-    import ContentText from './Kaart-Content-Text'
+    import { eventBus } from "../../../main.js";
+    import ContentButton from './Kaart-Content-Button.vue'
+    import ContentText from './Kaart-Content-Text.vue'
+    import Test from './Test-Component.vue'
+
     export default {
         data () {
             return {
+                noActiveSubComponent: true,
+                activeSubComponent: String,
                 items: {
                     autosteiger: {
                         componentName: 'appAutoSteiger',
@@ -88,9 +98,20 @@
                 },
             }
         },
+        created() {
+            eventBus.$on('subComponentHasChanged', (activeSubComponent) => {
+                this.noActiveSubComponent = false;
+                this.activeSubComponent = activeSubComponent;
+            });
+            eventBus.$on('componentHasChanged', () => {
+                this.noActiveSubComponent = true;
+            });
+        },
         components: {
             contentButton: ContentButton,
-            contentText: ContentText
+            contentText: ContentText,
+            appSluizen: Test,
+            appAutoSteiger: Test,
         },
     }
 </script>
